@@ -1,3 +1,133 @@
+*,*::after,*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  /* Primary */
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+
+
 body {
-  background-color: rebeccapurple;
+  background-color: var(--Off-white);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+
+#container {
+  background-color: var(--White);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 200px;
+}
+
+
+#age div {
+  display: flex;
+}
+
+
+#line label {
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+
+#line input {
+  border: 1px solid var(--Light-grey);
+  border-radius: 5px;
+  font-size: 32px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-weight: 900;
+}
+
+
+#line input:focus {
+  outline-color: var(--Purple);
+}
+
+
+#line input::placeholder{
+  color: var(--Smokey-grey);
+  font-weight: 900;
+}
+
+
+#line div{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3rem;
+}
+
+
+#line input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+
+#line {
+  display: flex;
+  gap: 2rem;
+  color: var(--Smokey-grey);
+  border-bottom: 1px solid var(--Light-grey);
+  padding-right: 5rem;
+}
+
+
+#date--form {
+  margin-top: 3rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  position: relative;
+  padding-bottom: 2.5rem;
+  padding-right: 5rem;
+}
+
+
+#submit {
+  border: none;
+  outline: none;
+  background-color: var(--Purple);
+  border-radius: 50%;
+  cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+
+#age {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+  font-size: 5rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+.dash {
+  color: var(--Purple);
 }
