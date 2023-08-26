@@ -22,18 +22,25 @@
     <form id="date--form" novalidate>
       <div id="line"> 
         <div>
-          <label for="day--input">DAY</label>
-          <input type="number" id="day--input" name="day" min="1" max="31" placeholder="DD" required>
+          <label for="day--input" class="error--label">DAY</label>
+          <input type="number" class="error--input" id="day--input" name="day" min="1" max="31" placeholder="DD" required>
+          <span id="april--error">Must be a valid date</span>
+          <span id="day--error">Must be a valid day</span>
+          <span id="day--empty">This field is required</span>
         </div>
         
         <div>
-          <label for="month--input">MONTH</label>
-          <input type="number" id="month--input" name="month" min="1" max="31" placeholder="MM" required>
+          <label for="month--input" class="error--label">MONTH</label>
+          <input type="number" class="error--input" id="month--input" name="month" min="1" max="31" placeholder="MM" required>
+          <span id="month--error">Must be a valid month</span>
+          <span id="month--empty">This field is required</span>
         </div>
   
         <div>
-          <label for="year--input">YEAR</label>
-          <input type="number" id="year--input" name="year" min="1900" max="2099" placeholder="YYYY" required>
+          <label for="year--input" class="error--label">YEAR</label>
+          <input type="number" class="error--input" id="year--input" name="year" min="1900" max="2099" placeholder="YYYY" required>
+          <span id="year--error">Must be in the past</span>
+          <span id="year--empty">This field is required</span>
         </div>
       </div>
 

@@ -70,6 +70,21 @@ body {
 }
 
 
+.error--label.error {
+  color: var(--Light-red);
+}
+
+
+.error--input.error {
+  border: 1px solid var(--Light-red) !important;
+}
+
+
+.error--input:focus.error {
+  outline-color: var(--Light-red) !important;
+}
+
+
 #line div{
   display: flex;
   flex-direction: column;
@@ -130,4 +145,20 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .dash {
   color: var(--Purple);
+}
+
+
+
+#april--error,
+#day--error,
+#day--empty,
+#month--error,
+#month--empty,
+#year--error,
+#year--empty {
+  color: var(--Light-red);
+  font-style: italic;
+  font-size: 13px;
+  padding-top: 5px;
+  display: none;
 }
