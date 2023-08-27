@@ -6,7 +6,6 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -32,9 +31,6 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 - **Bonus**: See the age numbers animate to their final number when the form is submitted
 
-### Screenshot
-
-![Screenshot](./screenshot.jpg)
 
 ### Links
 
@@ -58,7 +54,7 @@ Users should be able to:
 
 ### Continued development
 
-Save the input and calculated age in local storage/online
+- Save the input and calculated age in local storage/online
 
 ### Useful resources
 
