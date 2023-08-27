@@ -2,7 +2,7 @@ const form = document.getElementById("date--form");
 
 const dayRangeError = document.getElementById("day--error");
 const dayEmptyError = document.getElementById("day--empty");
-const aprilError = document.getElementById("april--error");
+const invalidDay = document.getElementById("invalid--day");
 
 const monthEmptyError = document.getElementById("month--empty");
 const monthRangeError = document.getElementById("month--error");
@@ -29,7 +29,9 @@ form.addEventListener("submit", (event) => {
   monthEmptyError.style.display = "none";
   yearEmptyError.style.display = "none";
 
-  hasError = checkDayError(day) || checkMonthError(month) || checkYearError(year);
+  hasError = checkDayError(day);
+  hasError = checkMonthError(month);
+  hasError = checkYearError(year);
 
   if(!hasError) {
     removeErrorClass();
