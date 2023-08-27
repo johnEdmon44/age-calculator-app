@@ -13,12 +13,15 @@ const yearEmptyError = document.getElementById("year--empty");
 const errorLabel = document.querySelectorAll(".error--label");
 const errorInput = document.querySelectorAll(".error--input");
 
+// display age
+const getYears = document.getElementById("years");
+const getDays = document.getElementById("days");
+const getMonths = document.getElementById("months");
 
 // form
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   let hasError = false;
-
 
   // Input value
   const day = document.getElementById("day--input").value;
@@ -36,6 +39,10 @@ form.addEventListener("submit", (event) => {
 
   if(!hasError) {
     removeErrorClass();
+    const [ageInYears, ageInMonths, ageInDays] = calculateAge(year);
+    renderAge(getDays, ageInDays);
+    renderAge(getMonths, ageInMonths);
+    renderAge(getYears, ageInYears);
   }
 });
 
@@ -123,4 +130,29 @@ function checkYearError(year) {
     yearRangeError.style.display = "none";
     return false;
   }
+}
+
+
+function calculateAge(birthYear) {
+  const today = new Date();
+  const ageInYears = today.getFullYear() - birthYear;
+  const ageInMonths = (today.getMonth() + 12 - (birthYear % 12));
+  const ageInDays = today.getDate() - (birthYear % daysInMonth(today.getMonth(), today.getFullYear()));
+  return [ageInYears, ageInMonths, ageInDays];
+}
+
+
+function daysInMonth(month, year) {
+  const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  return days[month] + (isLeapYear(year) && month === 1 ? 1 : 0);
+}
+
+
+function isLeapYear(year) {
+  return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0); 
+}
+
+
+function renderAge(target, value) {
+  target.textContent = value;
 }
