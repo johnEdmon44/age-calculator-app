@@ -28,11 +28,6 @@ form.addEventListener("submit", (event) => {
   const month = document.getElementById("month--input").value;
   const year = document.getElementById("year--input").value;
 
-  // reset error
-  dayEmptyError.style.display = "none";
-  monthEmptyError.style.display = "none";
-  yearEmptyError.style.display = "none";
-
   hasError = checkDayError(day, month);
   hasError = checkMonthError(month);
   hasError = checkYearError(year);
