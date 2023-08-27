@@ -40,18 +40,18 @@ form.addEventListener("submit", (event) => {
 });
 
 
-function checkDayError(value, month) {
-  if (!value) {
+function checkDayError(day, month) {
+  if (!day) {
     dayEmptyError.style.display = "block";
     addErrorClass();
     return true;
-  } else if (value < 1 || value > 31) {
+  } else if (day < 1 || day > 31) {
     dayRangeError.style.display = "block";
     addErrorClass();
     return true;
   } else if (
-    (month == 2 && value > 28) || 
-    ((month == 4 || month == 6 || month == 9 || month == 11) && value > 30)
+    (month == 2 && day > 28) || 
+    ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
     ) {
     invalidDay.style.display = "block";
     dayRangeError.style.display = "none";
@@ -92,12 +92,12 @@ function removeErrorClass() {
 }
 
 
-function checkMonthError(value) {
-  if (!value) {
+function checkMonthError(month) {
+  if (!month) {
     monthEmptyError.style.display = "block";
     addErrorClass();
     return true;
-  } else if (value < 1 || value > 12) {
+  } else if (month < 1 || month > 12) {
     monthRangeError.style.display = "block"
     addErrorClass();
     return true;
@@ -109,12 +109,12 @@ function checkMonthError(value) {
 }
 
 
-function checkYearError(value) {
-  if (!value) {
+function checkYearError(year) {
+  if (!year) {
     yearEmptyError.style.display = "block";
     addErrorClass();
     return true;
-  } else if (value < 1900 || value > 2099) {
+  } else if (year < 1900 || year > 2099) {
     yearRangeError.style.display = "block";
     addErrorClass();
     return true;
