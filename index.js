@@ -13,16 +13,17 @@ const yearEmptyError = document.getElementById("year--empty");
 const errorLabel = document.querySelectorAll(".error--label");
 const errorInput = document.querySelectorAll(".error--input");
 
-// Input value
-const day = document.getElementById("day--input").value;
-const month = document.getElementById("month--input").value;
-const year = document.getElementById("year--input").value;
-
 
 // form
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   let hasError = false;
+
+
+  // Input value
+  const day = document.getElementById("day--input").value;
+  const month = document.getElementById("month--input").value;
+  const year = document.getElementById("year--input").value;
 
   // reset error
   dayEmptyError.style.display = "none";
@@ -36,6 +37,10 @@ form.addEventListener("submit", (event) => {
   if(!hasError) {
     removeErrorClass();
   }
+
+  console.log(day);
+  console.log(month);
+  console.log(year);
 });
 
 
@@ -49,6 +54,8 @@ function checkDayError(value) {
     addErrorClass();
     return true;
   }  else {
+    dayEmptyError.style.display = "none";
+    dayRangeError.style.display = "none"
     return false;
   }
 }
@@ -73,6 +80,10 @@ function removeErrorClass() {
   errorInput.forEach((element) => {
     element.classList.remove("error");
   });
+
+  dayEmptyError.style.display = "none";
+  monthEmptyError.style.display = "none";
+  yearEmptyError.style.display = "none";
 }
 
 
@@ -86,6 +97,8 @@ function checkMonthError(value) {
     addErrorClass();
     return true;
   }  else {
+    monthEmptyError.style.display = "none";
+    monthRangeError.style.display = "none";
     return false;
   }
 }
@@ -97,10 +110,12 @@ function checkYearError(value) {
     addErrorClass();
     return true;
   } else if (value < 1900 || value > 2099) {
-    yearRangeError.style.display = "block"
+    yearRangeError.style.display = "block";
     addErrorClass();
     return true;
   }  else {
+    yearEmptyError.style.display = "none";
+    yearRangeError.style.display = "none";
     return false;
   }
 }
