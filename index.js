@@ -30,32 +30,37 @@ form.addEventListener("submit", (event) => {
   monthEmptyError.style.display = "none";
   yearEmptyError.style.display = "none";
 
-  hasError = checkDayError(day);
+  hasError = checkDayError(day, month);
   hasError = checkMonthError(month);
   hasError = checkYearError(year);
 
   if(!hasError) {
     removeErrorClass();
   }
-
-  console.log(day);
-  console.log(month);
-  console.log(year);
 });
 
 
-function checkDayError(value) {
+function checkDayError(value, month) {
   if (!value) {
     dayEmptyError.style.display = "block";
     addErrorClass();
     return true;
   } else if (value < 1 || value > 31) {
-    dayRangeError.style.display = "block"
+    dayRangeError.style.display = "block";
     addErrorClass();
     return true;
-  }  else {
+  } else if (
+    (month == 2 && value > 28) || 
+    ((month == 4 || month == 6 || month == 9 || month == 11) && value > 30)
+    ) {
+    invalidDay.style.display = "block";
+    dayRangeError.style.display = "none";
     dayEmptyError.style.display = "none";
-    dayRangeError.style.display = "none"
+    return true;
+  } else {
+    dayEmptyError.style.display = "none";
+    invalidDay.style.display = "none";
+    dayRangeError.style.display = "none";
     return false;
   }
 }
