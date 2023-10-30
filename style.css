@@ -130,6 +130,12 @@ input[type="number"]::-webkit-outer-spin-button {
   position: absolute;
   right: 0;
   bottom: 0;
+  transition: all .3s;
+}
+
+
+#submit:hover {
+  background-color: hsl(259, 55%, 41%);
 }
 
 
